@@ -5,29 +5,30 @@
       let pageNumber = 1;
 
       function plusOne() {
-        if (pageNumber) {
+        if (pageNumber < 5) {
           pageNumber++;
         }
+        showDivBasedOnNumber();
       }
 
       function minusOne() {
         if (pageNumber > 1) {
           pageNumber--;
         }
+        showDivBasedOnNumber();
       }
 
+      let content;
+
       function showDivBasedOnNumber() {
-        if (pageNumber === 1) {
-          document.getElementById("Slide1").classList.remove("hidden");
-          document.getElementById("Slide2").classList.add("hidden");
-        } else if (pageNumber === 2) {
-          document.getElementById("Slide1").classList.add("hidden");
-          document.getElementById("Slide2").classList.remove("hidden");
-        } else {
-          // Hide both divs if the number doesn't match
-          document.getElementById("Slide1").classList.add("hidden");
-          document.getElementById("Slide2").classList.add("hidden");
-        }
+        const slides = ["Slide1", "Slide2", "Slide3", "Slide4", "Slide5"];
+        slides.forEach((slide, index) => {
+          if (pageNumber === index + 1) {
+            document.getElementById(slide).classList.remove("hidden");
+          } else {
+            document.getElementById(slide).classList.add("hidden");
+          }
+        });
       }
     </script>
     <meta charset="UTF-8" />
@@ -51,13 +52,26 @@
       <script src="imgRotator.js"></script>
     </div>
 
-    
+    <div id="Slide3" class="centerTextDiv hidden">
+      <h1>I have something very special for you >////&lt</h1>
+      <img class="slideImage" src="CatRose.png" />
+    </div>
+
+    <div id="Slide4" class="centerTextDiv hidden">
+      <h1>DEEEEEEEEEEEEZ NUUUUUUUTS XDDDDDDDDDDD</h1>
+      <img src="CatXdd.gif" />
+    </div>
+
+    <div id="Slide5" class="centerTextDiv hidden">
+      <h1>Just joking here you go hihihihihi >:3c</h1>
+      <img src="CatGift.jpg" />
+    </div>
 
     <div id="navigationButtons">
-      <a onclick="minusOne();console.log(pageNumber); showDivBasedOnNumber(); "
+      <a onclick="minusOne();console.log(pageNumber);"
         ><img src="BunnyLeft.png"
       /></a>
-      <a onclick="plusOne(); console.log(pageNumber); showDivBasedOnNumber();"
+      <a onclick="plusOne(); console.log(pageNumber);"
         ><img src="BunnyRight.png"
       /></a>
     </div>

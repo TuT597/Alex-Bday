@@ -31,6 +31,12 @@
   transform: translate(-50%, -50%);
 }
 
+.slideImage {
+  height: 300px;
+  width: 300px;
+  transform: translate(70%);
+}
+
 #Slide1 img {
   display: block;
   margin: 0 auto;
