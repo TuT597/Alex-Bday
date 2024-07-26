@@ -5,11 +5,15 @@
       let pageNumber = 1;
 
       function plusOne() {
-        pageNumber++;
+        if (pageNumber) {
+          pageNumber++;
+        }
       }
 
       function minusOne() {
-        pageNumber--;
+        if (pageNumber > 1) {
+          pageNumber--;
+        }
       }
 
       function showDivBasedOnNumber() {
@@ -32,40 +36,41 @@
     <title>Happy Bday!!!!!!!!</title>
   </head>
   <body>
-    <div id="tsparticles">
-      <div id="Slide1" class="centerTextDiv hidden">
-        <h1>OMG it's your birthday!! :3</h1>
-        <img src="CatJump1.gif" />
-      </div>
+    <div id="tsparticles"></div>
 
-      <div id="Slide2" class="centerTextDiv hidden">
-        <h1>
-          Twenty-Six (26!!) Years old!!! But somehow still no license! WOW!! XD
-        </h1>
-        <img id="rotatingLaugh" src="CatLaugh.jpg" />
-        <script src="imgRotator.js"></script>
-      </div>
+    <div id="Slide1" class="centerTextDiv hidden">
+      <h1>OMG it's your birthday!! :3</h1>
+      <img src="CatJump1.gif" />
+    </div>
 
-      <div id="navigationButtons">
-        <a
-          onclick="minusOne();console.log(pageNumber); showDivBasedOnNumber(); "
-          ><img src="BunnyLeft.png"
-        /></a>
-        <a onclick="plusOne(); console.log(pageNumber); showDivBasedOnNumber();"
-          ><img src="BunnyRight.png"
-        /></a>
-      </div>
+    <div id="Slide2" class="centerTextDiv hidden">
+      <h1>
+        Twenty-Six (26!!) Years old!!! But somehow still no license! WOW!! XD
+      </h1>
+      <img id="rotatingLaugh" src="CatLaugh.jpg" />
+      <script src="imgRotator.js"></script>
+    </div>
 
-      <div>
-        <audio id="celebrationAudio1" controls autoplay>
-          <source src="CelebrationTime.mp3" type="audio/mp3" />
-        </audio>
-        <script>
-          var audio = document.getElementById("celebrationAudio1");
-          audio.volume = 0.2;
-          audio.play();
-        </script>
-      </div>
+    
+
+    <div id="navigationButtons">
+      <a onclick="minusOne();console.log(pageNumber); showDivBasedOnNumber(); "
+        ><img src="BunnyLeft.png"
+      /></a>
+      <a onclick="plusOne(); console.log(pageNumber); showDivBasedOnNumber();"
+        ><img src="BunnyRight.png"
+      /></a>
+    </div>
+
+    <div>
+      <audio id="celebrationAudio1" controls autoplay>
+        <source src="CelebrationTime.mp3" type="audio/mp3" />
+      </audio>
+      <script>
+        var audio = document.getElementById("celebrationAudio1");
+        audio.volume = 0.2;
+        audio.play();
+      </script>
     </div>
 
     <script>
