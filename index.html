@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let pageNumber = 1;
+
+      function plusOne() {
+        pageNumber++;
+      }
+
+      function minusOne() {
+        pageNumber--;
+      }
+
+      function showDivBasedOnNumber() {
+        if (pageNumber === 1) {
+          document.getElementById("Slide1").classList.remove("hidden");
+          document.getElementById("Slide2").classList.add("hidden");
+        } else if (pageNumber === 2) {
+          document.getElementById("Slide1").classList.add("hidden");
+          document.getElementById("Slide2").classList.remove("hidden");
+        } else {
+          // Hide both divs if the number doesn't match
+          document.getElementById("Slide1").classList.add("hidden");
+          document.getElementById("Slide2").classList.add("hidden");
+        }
+      }
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Happy Bday!!!!!!!!</title>
+  </head>
+  <body>
+    <div id="tsparticles">
+      <div id="Slide1" class="centerTextDiv hidden">
+        <h1>OMG it's your birthday!! :3</h1>
+        <img src="CatJump1.gif" />
+      </div>
+
+      <div id="Slide2" class="centerTextDiv hidden">
+        <h1>
+          Twenty-Six (26!!) Years old!!! But somehow still no license! WOW!! XD
+        </h1>
+        <img id="rotatingLaugh" src="CatLaugh.jpg" />
+        <script src="imgRotator.js"></script>
+      </div>
+
+      <div id="navigationButtons">
+        <a
+          onclick="minusOne();console.log(pageNumber); showDivBasedOnNumber(); "
+          ><img src="BunnyLeft.png"
+        /></a>
+        <a onclick="plusOne(); console.log(pageNumber); showDivBasedOnNumber();"
+          ><img src="BunnyRight.png"
+        /></a>
+      </div>
+
+      <div>
+        <audio id="celebrationAudio1" controls autoplay>
+          <source src="CelebrationTime.mp3" type="audio/mp3" />
+        </audio>
+        <script>
+          var audio = document.getElementById("celebrationAudio1");
+          audio.volume = 0.2;
+          audio.play();
+        </script>
+      </div>
+    </div>
+
+    <script>
+      showDivBasedOnNumber();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-snow@3/tsparticles.preset.snow.bundle.min.js"></script>
+    <script>
+      tsParticles.load({
+        id: "tsparticles",
+        options: {
+          particles: {
+            color: {
+              value: "#FFFFFF",
+            },
+          },
+          background: {
+            opacity: 1,
+            color: {
+              value: "#FFC0CB",
+            },
+          },
+          fullScreen: {
+            enable: true,
+            zIndex: -1,
+          },
+          preset: "snow",
+        },
+      });
+    </script>
+  </body>
+</html>
